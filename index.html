@@ -9,23 +9,39 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <link href="https://fonts.googleapis.com/css?family=Orbitron:500|Righteous|Roboto&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+
+<audio id="bass" src="audio/BD0075.WAV"></audio>
+<audio id="snare" src="audio/SD0010.WAV"></audio>
+<audio id="cymbal" src="/audio/CB.WAV"></audio>
+<audio id="marimba" src="/audio/MA.WAV"></audio>
+
 </head>
 
 
+<body>
+        <div class="mt-5 container main-box"> 
+                <div class="row">
+                        
+                                        <div class="mt-3 ml-4 pl-1 btn-group-toggle" data-toggle="buttons">
+                                                        <label class="btn btn-warning yellow-box">
+                                                          <input type="checkbox" id="click" checked autocomplete="off">
+                                                        </label>
+                                                      </div>
+                                        <!--<input type="checkbox" class="" id="yellow-square">
+                                <!--<div class="btn-group-hidden" class="btn btn-warning" id = "yellow-square" data-hidden="buttons">
+                                <label class="btn btn-secondary active">
+                                        <input type="checkbox" checked autocomplete="off">
+                                </label>
+                                </div>-->
+                        
 
-        <div class="container main-box"> 
-                <div class="mt-4 row">
-                        <div class="ml-2 col power">
-                                <button type="button" class="btn btn-warning yellow-square"></button> 
-                        </div>
+                        <div class="pt-2 col-7 title-text">Memory game:  TRSimon</div>
 
-                        <div class="col-6"></div>
-
-                        <div class="mr-5 mt-2 col feedback-box">HEllO OB</div>
+                        <div class="mr-5 mt-4 col" id ="feedback-box"></div>
                 </div>
                         
                 <div class="pl-1 row">
-                        <div class="ml-1 col">
+                        <div class="ml-2 col">
                                 <p class="button-text">POWER</p>
                         </div>
 
@@ -37,29 +53,30 @@
 
                 </div>
 
-                <div class="mt-1 row gray-band">
-                        <div class="col">egg </div>
+                <div class="row gray-band">
+                        <div class="col">. </div>
                 </div>
 
                 <div class="ml-3 row">
-                        <div class="col">
-                                <div class="mt-5 row">
-                                <!----<input type="checkbox" class ="toggle" id = "on">  <p id = "a"></p> 
-                                <input type="checkbox" class ="toggle" id = "on"><p id = "b"></p>
-                                </div>--->
-                                        <div class="btn-group-toggle difficulty-switch" data-toggle="buttons">
-                                                <label class="btn btn-secondary active">
-                                                        <input type="checkbox" checked autocomplete="off"> A
-                                                </label>
+                        <div class="mt-3 pt-3 col">
+                                        <div class="btn-group-toggle" data-toggle="buttons">
+                                                        <label class="ml-3 btn btn-secondary yellow-box">
+                                                          <input type="checkbox" id="difficulty-switch" checked autocomplete="off">
+                                                        </label>
+                                                        
+                                                        <p class="button-text"><br>DIFFICULTY</p>        
                                         </div>
 
-                                        <div class="ml-3 btn-group-toggle difficulty-switch" data-toggle="buttons">
+                                        <!----- <div class="ml-3 btn-group-hidden" id="difficulty-switch" data-hidden="buttons">
                                         <label class="btn btn-secondary active">
                                                         <input type="checkbox" checked autocomplete="off"> B
-                                                </label>
-                                        </div>
-                                </div>
+                                                </label> --->
+                                                
+                                
+                                        
+                                
                         </div>
+                        
                                 
                         <div class="col"></div>
 
@@ -67,10 +84,10 @@
 
                         <div class="col"></div>
                 </div>
-
+             
                 <div class="row">
-                        <div class="ml-3 pt-4 mt-5 col-2 start-button">
-                                <button type="button" class="btn btn-warning start-button__box"><p id = "start-button__text">START<br><hr id = "start-button__hr">STOP</p></button>
+                        <div class="ml-3 mt-4 pt-5 col start-button">
+                                <button type="button" class="btn btn-warning" id = "start-button__box"><p id = "start-button__text">START<br><hr id = "start-button__hr">STOP</p></button>
                         </div>
 
                         <div class="col"></div>
@@ -78,35 +95,31 @@
                         <div class="col-8 keys">
 
                                 <div class="row">
-                                        <div class="ml-4 col-xs key key__red">
-                                                <span class="key-light">
-                                                        <svg height="25" width="25">
-                                                        <circle id="myCircle" cx="8" cy="9" r="7" stroke="brown" stroke-width="2" fill="BLACK"/>
+                                        <div class="ml-4 col key" id= "key__red">
+                                                <span class="key-light" id= "one">
+                                                        <!---<svg height="25" width="25">
+                                                        <!---<circle id="myCircle" cx="8" cy="9" r="7" stroke="brown" stroke-width="2" fill="black"/>
                                                         </svg>      
-                                                </span>
+                                                </span>--->
                                         </div> 
 
-                                        <div class="ml-4 col-xs key key__green">
-                                                <span class="key-light">
-                                                        <svg height="25" width="25">
-                                                                <use href="#myCircle"></use>
-                                                        </svg>
+                                        <div class="ml-4 col key" id = "key__green">
+                                                <span class="key-light" id="two">
+                                                        
+                                                        
                                                 </span>
                                         </div>
 
-                                        <div class="ml-4 col-xs key key__yellow">
-                                                <span class="key-light">
-                                                        <svg height="25" width="25">
-                                                                <use href="#myCircle"></use>
-                                                        </svg>
+                                        <div class="ml-4 col key" id ="key__yellow">
+                                                <span class="key-light" id="three">
+                                                        
                                                 </span>
                                         </div>
 
-                                        <div class="ml-4 col-xs key key__white">
-                                                <span class="key-light">
-                                                        <svg height="25" width="25">
-                                                                <use href="#myCircle"></use>
-                                                        </svg>
+                                        <div class="ml-4 col key" id= "key__white">
+                                                <span class="key-light" id="four">
+                                                        
+                                                  </span>      
                                         </div>
 
                                         <div class="col mini-box"></div>
@@ -114,5 +127,12 @@
                         </div>
                 </div>
         </div>
+
+        44
+
+This is how you link a JS file in HTML
+
+<script type="text/javascript" src="js/index.js"></script>
+
 </body>
 </html>
