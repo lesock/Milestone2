@@ -24,17 +24,24 @@ const powerButton = document.querySelector("#click");
 const startButton = document.querySelector("#start-button__box");
 
 gameDifficulty.addEventListener('click', (event) => {
-  if (gameDifficulty.checked == true) {
+  if (gameDifficulty.checked == true && powerButton.checked == true) {
     strict = true;
-  } else {
+    turnCounter.innerHTML = "B";
+    clearColor();
+    clearInterval(intervalId);
+  } else if (gameDifficulty.checked == false && powerButton.checked == true) {
     strict = false;
+    turnCounter.innerHTML = "A";
+    clearColor();
+    clearInterval(intervalId);
+    
   }
 });
 
 powerButton.addEventListener('click', (event) => {
   if (powerButton.checked == true) {
     on = true;
-    turnCounter.innerHTML = "-";
+    turnCounter.innerHTML = "------";
   } else {
     on = false;
     turnCounter.innerHTML = "";
@@ -91,8 +98,7 @@ function gameTurn() {
 
 function one() {
   if (noise) {
-    let audio = document.getElementById("bass");
-    audio.play();
+    let audio = document.getElementById("bass").play();
   }
   noise = true;
   keyRedLight.style.backgroundColor = "white";
@@ -100,8 +106,7 @@ function one() {
 
 function two() {
   if (noise) {
-    let audio = document.getElementById("snare");
-    audio.play();
+    let audio = document.getElementById("snare").play();
   }
   noise = true;
   keyGreenLight.style.backgroundColor = "white";
@@ -109,8 +114,7 @@ function two() {
 
 function three() {
   if (noise) {
-    let audio = document.getElementById("cymbal");
-    audio.play();
+    let audio = document.getElementById("cymbal").play();
   }
   noise = true;
   keyYellowLight.style.backgroundColor = "white";
@@ -118,8 +122,7 @@ function three() {
 
 function four() {
   if (noise) {
-    let audio = document.getElementById("marimba");
-    audio.play();
+    let audio = document.getElementById("maracas").play();
   }
   noise = true;
   keyWhiteLight.style.backgroundColor = "white";
