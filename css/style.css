@@ -1,7 +1,30 @@
 body {
    background-image: url("../images/walnut.jpg");
 }
+
+ @media only screen and (orientation: landscape) {
+   body {
+     width: 100%;
+   }
+ }
+
+ @media screen and (max-width: 768px) {
+   div.head-space {
+     display: none
+   }
+   }
+  @media (max-width: 768px) {
+      .container {
+        width: 100%;
+        max-width: none;
+      }
    
+ }
+
+ .head-space {
+    height: 175px;
+ }
+
 .main-box {
    width: 750px;
    height: 340px;
@@ -14,11 +37,11 @@ body {
 }
 
 .main-box::before {
-   width: 125px;
+   width: 150px;
    height: 230px;
    background: #666464;
-   position: absolute;
-   top: 140px;
+   position: fixed;
+   margin-top: 95px;
    margin-left: 5px;
    content: "";
    border-radius: 5px;
@@ -154,10 +177,3 @@ body {
    background: rgb(245, 235, 224);
  }
  
- @media (max-width: 768px) {
-   .container {
-     width: 100%;
-     max-width: none;
-   }
- }
-
